@@ -1,0 +1,7 @@
+{
+  "name": "pokeview",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
