@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pokeview</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let p of pokemonsWithData">
+    <ion-img alt="pokemon_img" [src]="p.sprites.front_default" [style]=""/>
+    <ion-card-header>
+      <ion-card-title>{{p.name | capitalize }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content [mode]="">
+      <span>N° {{p.id}}</span>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
