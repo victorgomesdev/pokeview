@@ -4,13 +4,15 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-card *ngFor="let p of pokemonsWithData">
-    <ion-img alt="pokemon_img" [src]="p.sprites.front_default" [style]=""/>
-    <ion-card-header>
-      <ion-card-title>{{p.name | capitalize }}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content [mode]="">
-      <span>N° {{p.id}}</span>
-    </ion-card-content>
-  </ion-card>
+  <ion-list>
+    <ion-item *ngFor="let pokemon of pokemonsWithData">
+      <ion-avatar slot="start">
+        <img [src]="pokemon.sprites.front_default" style="background: grey; object-fit: contain;" />
+      </ion-avatar>
+      <ion-label>{{pokemon.name | capitalize}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="onScrollEnd($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
